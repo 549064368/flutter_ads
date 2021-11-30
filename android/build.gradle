@@ -1,0 +1,63 @@
+group 'com.mb.mbads'
+version '1.0'
+
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:4.1.0'
+    }
+}
+def getCurrentProjectDir() {
+    String result = ""
+    rootProject.allprojects { project ->
+        if (project.properties.get("identityPath").toString() == ":mbads") {
+            result = project.properties.get("projectDir").toString()
+        }
+    }
+    return result
+}
+
+rootProject.allprojects {
+    def dir = getCurrentProjectDir()
+    repositories {
+        google()
+        mavenCentral()
+        maven {
+            url "$dir/libs"
+        }
+        maven {
+            url 'https://artifact.bytedance.com/repository/pangle'
+        }
+
+    }
+}
+
+
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 31
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    defaultConfig {
+        minSdkVersion 16
+        consumerProguardFiles 'proguard-rules.pro'
+    }
+
+}
+
+
+dependencies {
+    implementation "androidx.appcompat:appcompat:1.3.1"
+    implementation 'com.pangle.cn:ads-sdk-pro:4.0.2.2'
+    implementation 'com.google.code.gson:gson:2.8.6'
+   // implementation(name: 'open_ad_sdk_4.1.0.2', ext: 'aar')
+}

@@ -1,0 +1,49 @@
+PODS:
+  - Ads-CN (4.0.0.5):
+    - Ads-CN/BUAdSDK (= 4.0.0.5)
+  - Ads-CN/BUAdSDK (4.0.0.5):
+    - Ads-CN/BUFoundation
+    - Ads-CN/Domestic
+  - Ads-CN/BUFoundation (4.0.0.5)
+  - Ads-CN/Domestic (4.0.0.5)
+  - Flutter (1.0.0)
+  - fluttertoast (0.0.2):
+    - Flutter
+    - Toast
+  - mbads (0.0.1):
+    - Ads-CN
+    - Flutter
+    - MJExtension
+  - MJExtension (3.3.0)
+  - Toast (4.0.0)
+
+DEPENDENCIES:
+  - Flutter (from `Flutter`)
+  - fluttertoast (from `.symlinks/plugins/fluttertoast/ios`)
+  - mbads (from `.symlinks/plugins/mbads/ios`)
+
+SPEC REPOS:
+  trunk:
+    - Ads-CN
+    - MJExtension
+    - Toast
+
+EXTERNAL SOURCES:
+  Flutter:
+    :path: Flutter
+  fluttertoast:
+    :path: ".symlinks/plugins/fluttertoast/ios"
+  mbads:
+    :path: ".symlinks/plugins/mbads/ios"
+
+SPEC CHECKSUMS:
+  Ads-CN: 85c20c8e557b01f30bd0e1cb68244b90b061a8d5
+  Flutter: 50d75fe2f02b26cc09d224853bb45737f8b3214a
+  fluttertoast: 6122fa75143e992b1d3470f61000f591a798cc58
+  mbads: a7cb0f34371480c349328e6c0ea84f87aaa2bf9c
+  MJExtension: 01704cca2b60a214c10761b6491eab74069d68a9
+  Toast: 91b396c56ee72a5790816f40d3a94dd357abc196
+
+PODFILE CHECKSUM: 8e679eca47255a8ca8067c4c67aab20e64cb974d
+
+COCOAPODS: 1.11.1
