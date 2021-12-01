@@ -56,8 +56,8 @@
           configuration.GDPR = @(0);
           configuration.coppa = @(0);
           configuration.CCPA = @(1);
-          //configuration.logLevel = debug ? BUAdSDKLogLevelVerbose : BUAdSDKLogLevelNone;
-          configuration.logLevel = BUAdSDKLogLevelVerbose;
+          configuration.logLevel = debug ? BUAdSDKLogLevelVerbose : BUAdSDKLogLevelNone;
+          //configuration.logLevel = BUAdSDKLogLevelVerbose;
           configuration.appID = ttId;
           [BUAdSDKManager startWithAsyncCompletionHandler:^(BOOL success, NSError *error) {
               if (success) {

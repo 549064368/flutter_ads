@@ -34,7 +34,7 @@ class _MyAppState extends State<HomePage> {
     Mbads.initConfig(
       androidTTId: "5236748",
       iosTTId: '5236749',
-      appName: "每日猜歌", );
+      appName: "猫呗", );
 
     MbAdStream.initAdStream(mbInspireCallBack: MbInspireCallBack(
       onShow: (classify){
@@ -96,7 +96,7 @@ class _MyAppState extends State<HomePage> {
                   Mbads.initConfig(
                       androidTTId: "5236748",
                       iosTTId: '5236749',
-                      appName: "xx", );
+                      appName: "猫呗", );
                 },
                 textColor: Colors.white,
                 color: Colors.blue,

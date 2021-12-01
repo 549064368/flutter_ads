@@ -1,57 +1,34 @@
 # 字节跳动穿山甲广告 Flutter版本
 
 ## 简介
-mbadd是一款集成了穿山甲Android和iOSSDK的Flutter插件,瀑布流广告,方便直接调用穿山甲SDK方法开发
+mbadd是一款集成了穿山甲Android和iOSSDK的Flutter插件,**瀑布流广告**,方便直接调用穿山甲SDK方法开发
 
-## 官方文档
-* [Android](https://partner.oceanengine.com/union/media/union/download/detail?id=4&osType=android)
-* [IOS](https://partner.oceanengine.com/union/media/union/download/detail?id=16&osType=ios)
+![](https://github.com/549064368/flutter_ads/blob/main/211638262978_.pic.jpg)
 
-## 本地环境
-
-
-```
-
-## 集成步骤
+### 集成步骤
 #### 1、pubspec.yaml
 ```Dart
-mbads: ^0.0.1
+mbads: ^0.0.3
 ```
-引入
+
+## 引入
 ```Dart
 import 'package:mbads/mbads.dart';
 ```
-#### 2、Android
-SDK([4.0.2.2](https://www.csjplatform.com/union/media/union/download/log?id=4))已配置插件中无需额外配置，只需要在android目录中AndroidManifest.xml配置
-```Java
-<manifest ···
-    xmlns:tools="http://schemas.android.com/tools"
-    ···>
-  <application
-        tools:replace="android:label">
-```
 
-#### 3、IOS
-SDK([4.1.0.5](https://www.csjplatform.com/union/media/union/download/log?id=16)))已配置插件中，其余根据SDK文档配置，因为使用PlatformView，在Info.plist加入
-```
- <key>io.flutter.embedded_views_preview</key>
-    <true/>
-```
 
 ## 使用
 
 #### 1、SDK初始化
 ```Dart
-await  Mbads.initConfig(
-  androidTTId: "5236748",
-  iosTTId: '5236749',
-  appName: "xx", );
-}; //允许直接下载的网络状态集合 选填  
+await Mbads.initConfig(
+        androidTTId: "5236748",
+        iosTTId: '5236749',
+        appName: "xx", );
+}; 
 ```
 
 
-
-IOS 版本14及以上获取ATT权限，根据返回结果具体操作业务逻辑
 
 #### 2、开屏广告
 ```Dart
@@ -83,7 +60,7 @@ Mbads.splashAd(
     Navigator.pop(context);
     ToastUtils.show("倒计时结束");
     },
-  )
+    )
 )
 ```
 #### 3、信息流广告
@@ -112,7 +89,8 @@ Mbads.flowAd(adItems: adItems,
     onDisLike: (){
     ToastUtils.show("不喜欢");
     }
-)),
+    )
+),
 ```
 
 #### 4、激励视频广告
@@ -146,7 +124,7 @@ MbAdStream.initAdStream(mbInspireCallBack: MbInspireCallBack(
     onError: (classify,msg){
     ToastUtils.show("激励视频错误:" + classify + "," + msg);
     }
-    );
+);
 ```
 #### 5、新模版渲染插屏广告  分为全屏和插屏
 预加载新模版渲染插屏广告
@@ -164,29 +142,27 @@ Mbads.insertLoad(adItems: adItems);
 
 新模版渲染插屏广告结果监听
 ```dart
-FlutterUnionad.FlutterUnionadStream.initAdStream(
-      // 新模板渲染插屏广告回调
-    mbInsertCallBack: MbInsertCallBack(
+MbAdStream.initAdStrea(mbInsertCallBack: MbInsertCallBack(
     onShow: (classify){
-    ToastUtils.show("新插屏显示:" + classify);
+        ToastUtils.show("新插屏显示:" + classify);
     },
     onCache: (classify){
-    ToastUtils.show("新插屏加载成功:" + classify);
+        ToastUtils.show("新插屏加载成功:" + classify);
     },
     onComplete: (classify){
-    ToastUtils.show("新插屏领取奖励:" + classify);
+        ToastUtils.show("新插屏领取奖励:" + classify);
     },
     onSkip: (classify){
-    ToastUtils.show("新插屏领取奖励:" + classify);
+        ToastUtils.show("新插屏领取奖励:" + classify);
     },
     onClose: (classify){
-    ToastUtils.show("新插屏关闭:" + classify);
+        ToastUtils.show("新插屏关闭:" + classify);
     },
     onError: (classify,msg){
-    ToastUtils.show("新插屏错误:" + classify + "," + msg);
+        ToastUtils.show("新插屏错误:" + classify + "," + msg);
     }
-),
-    );
+    ),
+);    
 ```
 
 
